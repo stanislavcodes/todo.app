@@ -1,0 +1,271 @@
+/* fonts and colors 
+font-family: 'Baloo Bhaina 2', cursive;
+font-family: 'Poppins', sans-serif; 
+*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(120deg, #ff5f6d, #ffc371) no-repeat;
+  background: linear-gradient(120deg, #1f2041, #19647e, #1f2041) no-repeat;
+  font-family: "Baloo Bhaina 2", cursive;
+  color: white;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+main,
+.wrapper {
+  width: 100%;
+}
+
+h1::selection,
+li::selection,
+input::selection {
+  background-color: #19647e;
+  color: #ffffff;
+}
+.footer-text {
+  font-size: 1.3rem;
+}
+.footer-link:link,
+.footer-link:visited {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  /* display: block; */
+}
+.footer-link:hover span,
+.footer-link:active span {
+  opacity: 1;
+}
+
+.footer-link:hover span:nth-child(1),
+.footer-link:active span:nth-child(1) {
+  transform: translate(10%, -50%);
+}
+
+.footer-link:hover span:nth-child(2),
+.footer-link:active span:nth-child(2) {
+  transform: translate(-10%, -50%);
+}
+
+.footer-link span {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: -1;
+  height: 100%;
+  background-color: #119da4;
+  opacity: 0;
+  transition: transform 0.4s ease-in-out, opacity 0.3s ease-in;
+}
+.footer-link span:nth-child(1) {
+  transform: translate(-110%, -50%);
+}
+.footer-link span:nth-child(2) {
+  transform: translate(110%, -50%);
+}
+header {
+  font-size: 2rem;
+  font-family: "Caveat", cursive;
+}
+header,
+form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer,
+header {
+  background-color: #1f204127;
+  min-height: 9vh;
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form input,
+form button {
+  padding: 1rem;
+  font-size: 2rem;
+  border: none;
+  background-color: #fff;
+}
+
+form button {
+  color: #ff5f6d;
+  color: #1f2041;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  background-color: #ff5f6d;
+  background-color: #1f2041;
+  color: white;
+}
+
+.input-box {
+  display: flex;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.todo-list {
+  width: 40%;
+  list-style: none;
+}
+
+.todo {
+  margin: 1rem;
+  background-color: #fff;
+  color: black;
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.4s ease;
+  z-index: 10;
+}
+
+.todo li {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.trash-btn,
+.complete-btn {
+  background-color: #ff5f6d;
+  background-color: #1f2041;
+  color: white;
+  border: none;
+  padding: 1.5rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.complete-btn {
+  background-color: #3ae374;
+  background-color: #119da4;
+}
+.todo-item {
+  padding: 0 1rem;
+}
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.fall {
+  transform: translateY(8rem) rotateZ(20deg) scale(0);
+  opacity: 0;
+  z-index: 1;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  color: #ff5f6d;
+  color: #1f2041;
+  width: 14rem;
+  cursor: pointer;
+  padding: 1.5rem;
+}
+
+.select {
+  margin-left: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  background-color: #ff5f6d;
+  background-color: #1f2041;
+  top: 0;
+  right: 0;
+  padding: 1.5rem;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.select:hover::after {
+  background: white;
+  color: #ff5f6d;
+  color: #1f2041;
+}
+
+@media only screen and (max-width: 1100px) {
+  .todo-list {
+    width: 65%;
+    list-style: none;
+  }
+
+  form {
+    /* min-height: 10vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .todo-list {
+    width: 95%;
+    list-style: none;
+  }
+  form {
+    flex-direction: column;
+  }
+  .select {
+    margin: 1rem 0 0 0;
+  }
+  .input-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  form input {
+    width: 70%;
+  }
+}
